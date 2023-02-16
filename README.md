@@ -3,7 +3,10 @@ javascript:
     A forma de pesquisar somente a tag <h1>. Usaremos o método querySelector(), passando como parâmetro o que queremos encontrar - neste caso, entre aspas.
     É uma boa prática não buscarmos por uma tag HTML específica, e usar outras opções que a função querySelector() nos disponibiliza. Como por exemplo:
     Além das tags HTML, o querySelector() nos permite buscar por um elemento por meio da classe, do id, ou seja, dos seletores CSS. Vamos testar esse recurso adicionando uma classe dentro do <h1>:
-
+    a função query selector mostra apenas uma classe (se vc tivesse várias, irá mostra apenas a primeira)
+    por isso existe a query selector all
+    o query selector retorna um objeto
+    
     O browser, ao carregar a página HTML, vai lendo linha por linha, de cima para baixo. Quando ele chega na tag <script>, ele tenta buscar um h1 na página, porém, isto não está carregado em sua memória. A tag <h1> está abaixo do código JavaScript e ainda não foi interpretado pelo navegador, logo, ele não poderá ser selecionado. sendo assim o retorno será null. Por isso é necessario adicionar a tag script no em dentro  e final do body
 
     Algumas tags, como h1, h2, p e span, possuem um conteúdo de texto. E para altera-las no JavaScript use uma propriedade que nos permite acessá-lo: textContent.
@@ -31,3 +34,14 @@ javascript:
         !para fazer uma busca especifica é importante criar um id e utlizado e não uma classe já existente!
 
         revisar ou and operadores logicos 
+
+        toFixed(), que recebe como parâmetro a quantidade de casas decimais a serem exibidas depois do 
+        paragrafo.style.color = "rgb(0,0,255)";
+        sempre que uma tag css tiver duas palavras para escrever com js usa o metodo de escrita camelCase
+        O correto é usar o padrão camelCase quando estamos tentando acessar um estilo que possuí duas palavras no CSS.
+
+                
+        Quando selecionamos um elemento com as funções de querySelector, elas nos devolvem um objeto que tem algumas propriedades especiais, que falam sobre as características do HTML selecionado. Uma dessas propriedades é a .classList, que como o nome indica nos mostras classes que aquele HTML tem.
+
+        não é recomendado usar o style no js, cada arquivo/pasta tem sua função e a do js é de manipular elementos
+        A boa prática de não alterar o estilo diretamente no Javascript e sim modificar as classes dos elementos com a propriedade .classList
