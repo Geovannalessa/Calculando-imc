@@ -22,3 +22,12 @@ javascript:
         Por isso, quando dizemos que com o Javascript nós estamos manipulando o DOM, estamos manipulando o que o navegador renderizou. Então ao trocar algum texto do DOM, o navegador imediatamente desenha novamente aquele texto, pois o DOM é o que o navegador usa para desenhar o seu site.
 
         Outra caracteristica interessante, é que como manipulamos o DOM , quando trocamos um texto de um <h1> ou um estilo de um elemento, na verdade estamos alterando a representação em memória , o que faz com que o arquivo fonte que contêm seu HTML fique intacto!
+
+        Pode fazer uma outra query selector onde já se utilizou uma query selector 
+        Acessando elementos dentro de outro elemento
+        var paciente = document.querySelector("#primeiro-paciente");
+        //peso
+        var tdPeso = paciente.querySelector(".info-peso");
+        !para fazer uma busca especifica é importante criar um id e utlizado e não uma classe já existente!
+
+        revisar ou and operadores logicos 
