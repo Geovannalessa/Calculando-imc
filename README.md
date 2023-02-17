@@ -45,3 +45,17 @@ javascript:
 
         não é recomendado usar o style no js, cada arquivo/pasta tem sua função e a do js é de manipular elementos
         A boa prática de não alterar o estilo diretamente no Javascript e sim modificar as classes dos elementos com a propriedade .classList
+
+        Nada acontece quando adicionamos um addEventListener("evento", funcaoSemParametros())  => porque como a função não retorna nada, o código que será executado será igual a nada quando o evento for disparado
+ 
+        o .value é o que recebe entrada do usuário possui a propriedade value (como input)
+        event.preventDefault() preveni o comportamento padrão do evento (se fosse um botão, ele deixaria de recarragar a página)
+
+        A função responsável por criar elementos no Javascript é a createElement()
+        Para ter acesso aos inputs do form, e só colocar por exemplo form.nome onde ira pegar o input q tiver com o (id ou o nome?)como se os inputs fossem propriedades do form.
+        E extrair o valor do input com o .value e adicionar o que foi escrito com textContent ex:
+        var nome = form.nome.value;
+        var nomeTd = document.createElement("td"); esse serve para adicionar uma tag no html
+        nomeTd.textContent = nome;
+        .appendChild : serve para adicionar um filho (logo a tag tem que ser pai)
+        pacienteTr.appendChild(nomeTd); pacienteTr é Tr de uma tabela e ira adicionar uma Td como filho.
