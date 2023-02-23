@@ -59,3 +59,9 @@ javascript:
         nomeTd.textContent = nome;
         .appendChild : serve para adicionar um filho (logo a tag tem que ser pai)
         pacienteTr.appendChild(nomeTd); pacienteTr é Tr de uma tabela e ira adicionar uma Td como filho.
+        é possivel adicionar mais de uma função no addEventListener:
+          botao.addEventListener('click', botaoHandler);
+          botao.addEventListener('click', outroHandler);
+
+      boas praticas js:
+      nn ter um arquivo js gigante com varias funçoes, é uma boa pratica quebrar o arquivo grande e em cada arquivo colocar sua funcionalidade especifica. 
