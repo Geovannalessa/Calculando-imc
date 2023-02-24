@@ -6,14 +6,11 @@ javascript:
     a função query selector mostra apenas uma classe (se vc tivesse várias, irá mostra apenas a primeira)
     por isso existe a query selector all
     o query selector retorna um objeto
+    ..
+
     
-    O browser, ao carregar a página HTML, vai lendo linha por linha, de cima para baixo. Quando ele chega na tag <script>, ele tenta buscar um h1 na página, porém, isto não está carregado em sua memória. A tag <h1> está abaixo do código JavaScript e ainda não foi interpretado pelo navegador, logo, ele não poderá ser selecionado. sendo assim o retorno será null. Por isso é necessario adicionar a tag script no em dentro  e final do body
 
-    Algumas tags, como h1, h2, p e span, possuem um conteúdo de texto. E para altera-las no JavaScript use uma propriedade que nos permite acessá-lo: textContent.
-    ?qual a diferença entre innerhtml e textcontent?
-
-    Assim como o CSS é uma boa pratica e organização adicionar um arquivo externo para o javascript
-    A tag <script> continuará na página index.html, porém, ela não ficará vazia, e apontará para o arquivo JavaScript externo que criamos, por meio do atributo src (referente ao termo source).
+    
     
     CTRL + SHIFT + J abre o console do desenvolvedor
 
@@ -25,6 +22,9 @@ javascript:
         Por isso, quando dizemos que com o Javascript nós estamos manipulando o DOM, estamos manipulando o que o navegador renderizou. Então ao trocar algum texto do DOM, o navegador imediatamente desenha novamente aquele texto, pois o DOM é o que o navegador usa para desenhar o seu site.
 
         Outra caracteristica interessante, é que como manipulamos o DOM , quando trocamos um texto de um <h1> ou um estilo de um elemento, na verdade estamos alterando a representação em memória , o que faz com que o arquivo fonte que contêm seu HTML fique intacto!
+
+  Algumas tags, como h1, h2, p e span, possuem um conteúdo de texto. E para altera-las no JavaScript use uma propriedade que nos permite acessá-lo: textContent.
+      ?qual a diferença entre innerhtml e textcontent?
 
         Pode fazer uma outra query selector onde já se utilizou uma query selector 
         Acessando elementos dentro de outro elemento
@@ -65,3 +65,20 @@ javascript:
 
       boas praticas js:
       nn ter um arquivo js gigante com varias funçoes, é uma boa pratica quebrar o arquivo grande e em cada arquivo colocar sua funcionalidade especifica. 
+
+      Sabemos que quebrar uma grande função complexa é uma boa prática por causa de diversos fatores, mas podemos citar como os principais deles:
+
+Dar manutenção ao código fica muito mais fácil, visto que agora podemos examinar vários pequenos blocos , que são muito mais fáceis de compreender do que um grande bloco de texto
+Ao quebrar uma grande função, também estamos deixando ela com menos responsabilidades, com a meta de atingir o ideal de que cada função tenha apenas uma única responsabilidade.
+O código também fica muito mais fácil de testar, pois se temos diversas funções pequenas conseguimos ir testando uma a uma em busca de erros ou bugs do código.
+E por último, a legibilidade do código aumenta muito, pois dando nomes semânticos a cada uma das funções menores conseguimos deixar bem claro o que aquela parte do código deve fazer e facilita o entendimento do todo como um geral.
+
+Dividir o código, separando por funcionalidades do sistema
+Os objetos em Javascript
+A quebrar funções grandes em funções menores ,com cada uma com sua responsabilidade
+A função form.reset() para limpar o formulário
+
+
+    O browser, ao carregar a página HTML, vai lendo linha por linha, de cima para baixo. Quando ele chega na tag <script>, ele tenta buscar um h1 na página, porém, isto não está carregado em sua memória. A tag <h1> está abaixo do código JavaScript e ainda não foi interpretado pelo navegador, logo, ele não poderá ser selecionado. sendo assim o retorno será null. Por isso é necessario adicionar a tag script no em dentro  e final do body
+    Assim como o CSS é uma boa pratica e organização adicionar um arquivo externo para o javascript
+    A tag <script> continuará na página index.html, porém, ela não ficará vazia, e apontará para o arquivo JavaScript externo que criamos, por meio do atributo src (referente ao termo source).
