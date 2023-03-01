@@ -82,3 +82,51 @@ A função form.reset() para limpar o formulário
     O browser, ao carregar a página HTML, vai lendo linha por linha, de cima para baixo. Quando ele chega na tag <script>, ele tenta buscar um h1 na página, porém, isto não está carregado em sua memória. A tag <h1> está abaixo do código JavaScript e ainda não foi interpretado pelo navegador, logo, ele não poderá ser selecionado. sendo assim o retorno será null. Por isso é necessario adicionar a tag script no em dentro  e final do body
     Assim como o CSS é uma boa pratica e organização adicionar um arquivo externo para o javascript
     A tag <script> continuará na página index.html, porém, ela não ficará vazia, e apontará para o arquivo JavaScript externo que criamos, por meio do atributo src (referente ao termo source).
+
+
+    Além do for, existe outro tipo de iteração, o forEach(), o qual não precisamos delimitar, e que passará por todos os elementos. Para cada item do array, será realizada uma ação.
+     erros.forEach(function(erro){
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
+    erros: é o array onde vai passar o for.
+
+    Com a propriedade innerHTML, podemos obter o conteúdo HTML (HTML interno) de um elemento.
+    Quando utilizada para obter o HTML interno de um elemento, seu retorno é uma String, que representa todo o conteúdo HTML do próprio elemento.
+    Com a propriedade innerHTML, podemos editar o conteúdo HTML (HTML interno) de um elemento.
+
+evento de duplo clique, o dblclick:
+paciente.addEventListener("dblclick", function() {
+
+    });
+evento para três cliques
+    window.addEventListener('click', function (evt) {
+    if (evt.detail === 3) {
+        alert('triple click!');
+    }
+});
+event.detail:
+A count of consecutive clicks that happened in a short amount of time, incremented by one.
+A função do JavaScript responsável por remover um elemento do HTML é a remove()
+O this é uma palavra de contexto ligada com quem acionou o evento, a quem o evento está atrelado. Como o evento está atrelado ao paciente, o this fará referência a ele.
+ paciente.addEventListener("dblclick", function() {
+        this.remove();
+    });
+diferença entre o this e o target
+this é o dono do evento
+target é quem sofreu o evento em si
+testa usando
+ console.log(event.target)
+        console.log(this)
+parentNode: pega o pai do evento com alvo
+    var alvoEvento = event.target;
+    var paiDoAlvo = alvoEvento.parentNode;
+
+setTimeout: função que determina tempo que algo aconteça, com o parametro de tempo de milissegundos ex: 500 milissegundos = a meio segundo.
+tagName = captura o nome da tag e deixa maiuscula
+document.querySelector('h1').tagName
+ // Somente executará nosso código caso o elemento em que clicamos seja um <td>
+    if (event.target.tagName == 'TD') {
+        event.target.parentNode.remove()
+    }
