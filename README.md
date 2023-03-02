@@ -157,3 +157,48 @@ Como buscar por apenas um pedaço de uma palavra com as Expressões Regulares em
 Mas há um modo de fazer essa comparação sem a necessidade de utilizar expressões regulares! Podemos utilizar a função substring, que recebe dois parâmetros, fazendo com que ela devolva parte da string, com o tamanho definido nos parâmetros. O primeiro parâmetro é o início, começando do 0 (que representa o primeiro caractere). O segundo parâmetro define o fim (exclusivo, mostramos até o penúltimo caractere). Por exemplo:
 var string = "Alura";
 var resultado = string.substring(1, 4);
+Extraímos uma string que começa no segundo caractere (número 1) e termina no quarto caractere (número 3, índice anterior ao número 4).
+var comparavel = nome.substr(0, this.value.length);
+var comparavelMinusculo = comparavel.toLowerCase();
+var valorDigitadoMinusculo = this.value.toLowerCase();
+
+if (!(valorDigitadoMinusculo == comparavelMinusculo)) {
+    paciente.classList.add("invisivel");
+} else{
+    paciente.classList.remove("invisivel");
+}
+
+Como fazer uma requisição assíncrona com o Javascript
+O objeto XMLHttpRequest
+Como configurar e enviar uma requisição
+O evento de load
+O que é a técnica AJAX.
+O formato JSON
+Como converter JSON para um objeto Javascript com a função JSON.parse()
+Como lidar com erros durante o AJAX
+O objeto XMLHttpRequest é quem é responsável por fazer requisições HTTP assíncronas com Javascript. Apesar de ter o XML no nome hoje em dia este objeto pode trafegar diversos outros tipos de dados além do XML, este nome só se manteve devido a um legado histórico.
+
+E para instanciar um novo Objeto XMLHttpRequest devemos utilizar a sintaxe com a palavrinha new :
+
+var xhr = new XMLHttpRequest();
+Dado que temos um XMLHttpRequest, precisamos configurar nossa requisição para dizer para qual servidor queremos enviá-la e também qual método HTTP devemos usar.
+
+Fazemos isto através do método .open() , passando o método e a url :
+
+xhr.open("POST","www.xyz.com.br/compras");
+Os dados possuem uma estrutura parecida com o objeto do JavaScript porque eles estão no formato JSON (sigla de JavaScript Object Notation), um formato de dados parecidos com os objetos do JavaScript que podemos transportar pela web.
+
+A semelhança é tanta que podemos facilmente converter JSON (o texto da resposta da requisição) em objetos do JavaScript com os quais estamos mais acostumados a utilizar, como array ou mesmo uma string. Queremos que ele seja transformado em um array de objetos, mais útil para o JS.
+
+Para conseguirmos transformar a resposta, que é um texto (uma string), em um array de pacientes, usaremos um "transformador", mais precisamente um parseador de JSON para objetos do JavaScript. Para realizarmos esta tarefa usaremos o método parse(). Assim, receberemos o texto em JSON, que depois será parseado. Em seguida, será retornado um objeto JavaScript. Como nossa resposta se parece com um objeto, o método entenderá isso e nos retornará um array do objetos:
+
+
+typeof mostra o tipo de dado é o componente selecionado
+ var numero = 1;
+    console.log( typeof numero)
+
+AJAX = A técnica utilizada nessa aula é conhecida como AJAX, essa maneira de fazer uma requisição de forma assíncrona com JavaScript.É uma requisição assíncrona porque não está parando o fluxo do código, ou seja, no momento em que a requisição é feita, a execução continua normalmente. Durante esse processo de busca de pacientes no servidor externo, é possível excluir e adicionar pacientes.
+
+Nesta aula aprendemos o suficiente para fazermos requisições para outros servidores, usamos o método open() para abrir a requisição e configurarmos o método GET para o seu envio. O send() é o método que efetivamente envia a requisição, após o qual devemos escutar a resposta para sabermos quando ela retornar no responseText. Em seguida, ela será "parseada" com o JSON.parse, se a resposta for recebida no formato JSON - texto com "cara" de JavaScript.
+
+Abordamos vários assuntos sobre a linguagem, sobre como utilizar as funções que já conhecemos para fazermos uma requisição e como integrar dois sistemas.
