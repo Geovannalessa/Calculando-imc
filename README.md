@@ -130,3 +130,30 @@ document.querySelector('h1').tagName
     if (event.target.tagName == 'TD') {
         event.target.parentNode.remove()
     }
+    a cada digitada que se dar no input, dá para capturar com uma função
+    campoFiltro.addEventListener("input", function() {
+        LEIA TUDO ANTES DE ESCREVER
+    Expressoes regulares: compara letra por letra. são um tipo especial de texto, que nos auxilia a buscarmos por strings, facilitando quando o termo for maior. Pode ser uma busca simples, como no nosso caso, em que queremos identificar quais nomes contêm determinadas letras; ou casos complexos, se queremos pesquisar se o parágrafo contém a palavra "nome", por exemplo, é como quando os editores de texto buscam por uma palavra usando o comando "CTRL + F".
+    var expressao = new RegExp();
+    Recebe dois parametros o primeiro o texto que queremos buscar, no caso, o termo digitado no campo de busca (this.value), e o segundo parâmetro será referente às características dos termos que devem ser buscados. É importante que a busca não seja case sensitive, que é a diferenciação entre letras maiúsculas e minúsculas. Devem ser buscadas tanto letras maiúsculas como minúsculas, e passaremos a letra "i" como segundo parâmetro, para indicarmos a opção case insensitive:
+     vamos pedir para a expressão regular verificar se um pedaço do nome do paciente possui as letras digitadas no campo de busca. Para isso, a expressão regular tem o método test(), com a qual passaremos o que queremos testar
+      var expressao = new RegExp(this.value, "i"); 
+            if (expressao.test(nome)) {
+                paciente.classList.add("invisivel");
+            } else {
+                paciente.classList.remove("invisivel");
+            }
+    
+    Esse teste irá retornar verdadeiro caso o nome contenha a expressão, ou falso caso não contenha. Como estamos testando se o nome não contém a expressão (por isso adicionaremos a classe invisivel), utilizaremos novamente o operador de negação (!). Logo, se o teste falhar, adicionaremos a classe; se não, ela será removida:
+
+    O primeiro parâmetro que devemos passar para o construtor é o padrão (o texto da expressão regular, o que deve ser buscado) e o segundo parâmetro são uma ou mais flags (representando como queremos que a expressão regular busque). Por exemplo, podemos definir que não queremos que haja distinção entre letras maiúsculas e minúsculas, através da flag i.
+
+Neste capítulo aprendemos:
+
+O novo evento de input
+O truque de deixar invisível adicionando uma classe com display:none
+Como realizar uma busca, escondendo todos os elementos e mostrando apenas aqueles que nos interessam
+Como buscar por apenas um pedaço de uma palavra com as Expressões Regulares em Javascript
+Mas há um modo de fazer essa comparação sem a necessidade de utilizar expressões regulares! Podemos utilizar a função substring, que recebe dois parâmetros, fazendo com que ela devolva parte da string, com o tamanho definido nos parâmetros. O primeiro parâmetro é o início, começando do 0 (que representa o primeiro caractere). O segundo parâmetro define o fim (exclusivo, mostramos até o penúltimo caractere). Por exemplo:
+var string = "Alura";
+var resultado = string.substring(1, 4);
